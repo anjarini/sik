@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+        <%= form_for(@agama) do |f| %>
+          <% if @agama.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@agama.errors.count, "error") %> prohibited this agama from being saved:</h2>
+
+              <ul>
+              <% @agama.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :nama_agama %></td>
+            <td><%= f.text_field :nama_agama %></td>
+          </div>
+        </tr>
+
+        <br> 
+        <tr>
+        <td><div></td>
+        <td></td>
+          <div class="actions">
+            <td><%= f.submit %></td>
+          </div>
+          </tr>
+          </div>
+          </div>
+          </tbody>
+          </table>
+        <% end %>

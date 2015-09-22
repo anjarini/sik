@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nik: 1
+  tgl_mati: 2015-07-01
+  sebab_mati: MyString
+  tempat_mati: MyString
+
+two:
+  nik: 1
+  tgl_mati: 2015-07-01
+  sebab_mati: MyString
+  tempat_mati: MyString

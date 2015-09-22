@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <h1>Agama
+    <br>
+    <br>
+    <%= link_to 'Tambah Agama', new_agama_path, class:'btn btn-primary pull-left' %>
+    <br>
+  </h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nama agama</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @agamas.each do |agama| %>
+        <tr>
+          <td><%= agama.nama_agama %></td>
+          <td><%= link_to 'Show', agama, class:'btn btn-primary' %></td>
+          <td><%= link_to 'Edit', edit_agama_path(agama),  class:'btn btn-warning' %></td>
+          <td><%= link_to 'Destroy', agama, method: :delete, data: { confirm: 'Anda yakin ingin menghapus ?' },  class:'btn btn-danger'  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

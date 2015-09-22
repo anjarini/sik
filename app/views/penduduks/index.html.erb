@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<h1>Data Penduduk 
+  <br>
+  <br>
+    <%= link_to 'Tambah Penduduk', new_penduduk_path, class:'btn btn-primary pull-left' %>
+  <br>
+</h1>
+  <%= form_tag penduduks_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "search" %>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  
+<table class="table">
+  <thead>
+    <tr>
+      <th>No nik</th>
+      <th>No kk</th>
+      <th>Nama</th>
+      <th>Golongan darah</th>
+      <th>Status keluarga</th>
+      <th>Agama</th>
+      <th>Tempat lahir</th>
+      <th>Tanggal lahir</th>
+      <th>Jenis Kelamin</th>
+      <th>Penghasilan</th>
+      <th>Status</th>
+      <th>Aksi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%# raise @penduduks.inspect %>
+    <% @penduduks.each do |penduduk| %>
+      <tr>
+        <td><%= penduduk.nik %></td>
+        <td><%= penduduk.no_kk %></td>
+        <td><%= penduduk.nama %></td>
+        <td><%= penduduk.golongan_darah.golongan_darah %></td>
+        <td><%= penduduk.status_keluarga.status_keluarga %></td>
+        <td><%= penduduk.agama.nama_agama %></td>
+        <td><%= penduduk.tempat_lahir %></td>
+        <td><%= penduduk.tanggal_lahir %></td>
+        <td><%= penduduk.jenis_kelamin %></td>
+        <td><%= penduduk.penghasilan.penghasilan %></td>
+        <td><%= penduduk.status %></td>
+       <td><%= link_to 'Show', penduduk_path(penduduk.id), class:'btn btn-primary'%></td> 
+        <td><%= link_to 'Edit', edit_penduduk_path(penduduk), class:'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', penduduk, method: :delete, data: { confirm: 'Anda yakin ingin menghapus?' },class:'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

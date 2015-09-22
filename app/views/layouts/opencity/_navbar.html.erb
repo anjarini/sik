@@ -1,0 +1,157 @@
+<header id="header">
+    <ul class="header-inner">
+        <li id="menu-trigger" data-trigger="#sidebar">
+            <div class="line-wrap">
+                <div class="line top"></div>
+                <div class="line center"></div>
+                <div class="line bottom"></div>
+            </div>
+        </li>
+    
+        <li class="logo hidden-xs">
+            <a href="index.php">Open<b>City</b></a>
+        </li>
+        
+        <li class="pull-right">
+        <ul class="top-menu">
+            <li id="toggle-width">
+                <div class="toggle-switch">
+                    <input id="tw-switch" type="checkbox" hidden="hidden">
+                    <label for="tw-switch" class="ts-helper"></label>
+                </div>
+            </li>
+            <li id="top-search">
+                <a class="tm-search" href=""></a>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="tm-task" href=""></a>
+                <div class="dropdown-menu dropdown-menu-lg pull-right">
+                    <div class="listview">
+                        <div class="lv-header">
+                            APLIKASI LAIN
+                        </div>
+                        <div class="lv-body c-overflow" style="height:100%">
+                            <div class="picture-list">
+                                <div class="pl-body">
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'news.png' %>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'news.png' %>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'newspaper.png' %>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'talk.png' %>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'city.png' %>
+                                        </a>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="">
+                                            <%= image_tag 'connect.png' %>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="lv-footer" href="" style="margin:0">Bantuan</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="tm-notification" href=""><i class="tmn-counts">9</i></a>
+                <div class="dropdown-menu dropdown-menu-lg pull-right">
+                    <div class="listview" id="notifications">
+                        <div class="lv-header">
+                            NOTIFIKASI
+                            <ul class="actions">
+                                <li class="dropdown">
+                                    <a href="" data-clear="notification">
+                                        <i class="md md-done-all"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lv-body c-overflow">
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                            <%= image_tag '1.jpg', class:'lv-img-sm' %>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Ambar Setyawan</div>
+                                        <small class="lv-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                            <%= image_tag '2.jpg', class:'lv-img-sm' %>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Ronggo Pradipto</div>
+                                        <small class="lv-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                            <%= image_tag '3.jpg', class:'lv-img-sm' %>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Nur Hildayanti</div>
+                                        <small class="lv-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="lv-item" href="">
+                                <div class="media">
+                                    <div class="pull-left">
+                                            <%= image_tag '4.jpg', class:'lv-img-sm' %>
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="lv-title">Cevy Yufindra</div>
+                                        <small class="lv-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+            
+                        <a class="lv-footer" href="">View Previous</a>
+                    </div>
+            
+                </div>
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="tm-settings" href=""></a>
+                <ul class="dropdown-menu dm-icon pull-right">
+                    <li>
+                        <%= link_to 'keluar' , logout_path, class: 'btn' %>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <!--Search-->
+    <div id="top-search-wrap">
+        <input type="text">
+        <i id="top-search-close">&times;</i>
+    </div>
+</header>

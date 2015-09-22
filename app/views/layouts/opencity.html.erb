@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sik</title>
+  <%= stylesheet_link_tag    'opencity', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'opencity', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'layouts/opencity/navbar' %>
+<%= render 'layouts/opencity/sidebar' %>
+	<% if alert %> 
+		<div class="alert alert-danger fade in" role="alert"> 
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+
+			<button type="button" class="close" data-dismiss="alert">
+				<i class="glyphicon glyphicon-remove"> </i>
+			</button>
+
+			<span class="sr-only">Error:</span> 
+				<%= alert %> </div> <% end %> 
+				<% if notice %> 
+				<div class="alert alert-success fade in" role="alert">
+			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+
+			<button type="button" class="close" data-dismiss="alert">
+				<i class="glyphicon glyphicon-remove"></i>
+			</button>
+
+			<span class="sr-only">Notif:</span> <%= notice %> </div> <% end %>
+	<%= yield %>
+<%= render 'layouts/opencity/footer' %>
+
+</body>
+</html>

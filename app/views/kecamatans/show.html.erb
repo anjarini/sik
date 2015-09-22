@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  	<tbody>
+      	<tr>
+		  <td><strong>Nama kecamatan:</strong></td>
+		  <td><%= @kecamatan.nama_kecamatan %></td>
+		</tr>
+		<tr>
+		  <td><strong>Kabupaten:</strong></td>
+		  <td><%= @kecamatan.kabupaten_id%></td>
+		</tr>
+		<tr>
+		  <td><strong>Admin id:</strong></td>
+		  <td><%= @kecamatan.admin_id%></td>
+		</tr>		
+	</tbody>
+</table>
+<br>
+<br>
+<div class="col-md-offset-5">
+		<%= link_to 'Edit', edit_kecamatan_path(@kecamatan), class:'btn btn-warning' %> |
+		<%= link_to 'Back', kecamatans_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

@@ -1,0 +1,45 @@
+<script type="text/javascript">
+$(function(){
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+
+})
+</script>
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<h1>Data Kelurahan
+<br>
+<br>
+<%= link_to 'Tambah Kelurahan', new_kelurahan_path,  class:'btn btn-primary pull-left' %>
+<br>
+</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nama kelurahan</th>
+      <th>Kecamatan</th>
+      <th> Admin </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kelurahans.each do |kelurahan| %>
+      <tr>
+        <td><%= kelurahan.nama_kelurahan %></td>
+        <td><%= kelurahan.kecamatan.nama_kecamatan %></td>
+        <td><%= kelurahan.admin.nama %></td>
+        <td><%= link_to 'Show', kelurahan, class:'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_kelurahan_path(kelurahan), class:'btn btn-warning'  %></td>
+        <td><%= link_to 'Destroy', kelurahan, method: :delete, data: { confirm: 'Anda yakin ingin menghapus?' }, class:'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>   
+

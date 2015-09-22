@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+    <tbody>
+        <tr>
+          <td><strong>Nama:</strong></td>
+          <td><%= @admin.nama %></td>
+        </tr>
+
+        <tr>
+          <tr><strong>Instansi:</strong></tr>
+          <tr><%= @admin.instansi %></tr>
+        </tr>
+
+        <tr>
+          <td><strong>Level:</strong></td>
+          <td><%= @admin.level %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Username:</strong></td>
+          <td><%= @admin.username %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Password:</strong></td>
+          <td><%= @admin.password %></td>
+        </tr>
+  </tbody>
+</table>
+<br>
+<br>
+<div class="col-md-offset-5">
+        <%= link_to 'Edit', edit_admin_path(@admin),  class:'btn btn-warning' %> |
+        <%= link_to 'Back', admins_path, class:'btn btn-primary'  %>
+</div>
+<br>
+<br>
+</div>
+</div>

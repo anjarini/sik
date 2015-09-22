@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+        <%= form_for(@kabupaten) do |f| %>
+          <% if @kabupaten.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@kabupaten.errors.count, "error") %> prohibited this kabupaten from being saved:</h2>
+
+              <ul>
+              <% @kabupaten.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <tr>
+            <td><div class="field"></td>
+              <td><%= f.label :nama_kabupaten %></td>
+              <td><%= f.text_field :nama_kabupaten %></td>
+            </div>
+          </tr>
+
+          <tr>
+            <%= fields_for Admin.new do |ad|  %>
+              <td><div class="field"></td>
+                  <td><%= ad.label "Admin" %></td>
+                  <td><%= collection_select(:kabupaten, :admin_id,  @admins, :id, :nama, {include_blank: 'pilih admin'}) %></td>
+              </div>
+            <% end %>
+          </tr>
+
+          <br> 
+          <tr>
+          <td><div></td>
+          <td></td>
+          <td>
+            <%= f.submit %>
+          </td>
+          </div>
+          </tr>
+          </tbody>
+          </table>
+        <% end %>

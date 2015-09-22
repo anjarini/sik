@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  	<tbody>
+      	<tr>
+		  <td><strong>Jenjang:</strong></td>
+		  <td><%= @pendidikan.jenjang %></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<div class="col-md-offset-5">
+		<%= link_to 'Edit', edit_pendidikan_path(@pendidikan), class:'btn btn-warning' %> |
+		<%= link_to 'Back', pendidikans_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

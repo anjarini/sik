@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  	<tbody>
+      	<tr>
+		  <td><strong>Nama agama:</strong></td>
+		  <td><%= @agama.nama_agama %></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<div class="col-md-offset-5">
+		<%= link_to 'Edit', edit_agama_path(@agama), class:'btn btn-warning' %> |
+		<%= link_to 'Back', agamas_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

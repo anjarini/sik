@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+        <td><strong>No nik:</strong></td>
+        <td><%= @penduduk.nik%></td>
+      </tr>
+
+      <tr>
+        <td><strong>No kk:</strong></td>
+        <td><%= @penduduk.no_kk%></td>
+      </tr>
+
+       <tr>
+        <td><strong>Nama</strong></td>
+        <td><%= @penduduk.nama%></td>
+      </tr>
+
+      <tr>
+        <td><strong>Golongan darah:</strong></td>
+        <td><%= @penduduk.golongan_darah.golongan_darah %></td>
+      </tr> 
+      
+      <tr>
+        <td><strong>Status keluarga:</strong></td>
+        <td><%= @penduduk.status_keluarga.status_keluarga %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Tempat lahir:</strong></td>
+        <td><%= @penduduk.tempat_lahir %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Tanggal lahir:</strong></td>
+        <td><%= @penduduk.tanggal_lahir %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Jenis kelamin:</strong></td>
+        <td><%= @penduduk.jenis_kelamin %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Pekerjaan:</strong></td>
+        <td><%= @penduduk.pekerjaan.jenis_pekerjaan %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Kewarganegaraan:</strong></td>
+        <td><%= @penduduk.kewarganegaraan %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Agama:</strong></td>
+        <td><%= @penduduk.agama.nama_agama%></td>
+      </tr>
+      
+      <tr>
+        <td><strong>Pendidikan:</strong></td>
+        <td><%= @penduduk.pendidikan.jenjang %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>kelurahan:</strong></td>
+        <td><%= @penduduk.kelurahan.nama_kelurahan %></td>
+      </tr>
+      
+      <tr>
+        <td><strong>rt:</strong></td>
+        <td><%= @penduduk.rt %></td>
+      </tr>
+
+      <tr>
+        <td><strong>rw:</strong></td>
+        <td><%= @penduduk.rw %></td>
+      </tr>  
+      
+      <tr>
+        <td><strong>Alamat:</strong></td>
+        <td><%= @penduduk.alamat %></td>
+      </tr>
+      <tr>
+        <td><strong>Penghasilan:</strong></td>
+        <td><%= @penduduk.penghasilan.penghasilan %></td>
+      </tr>
+      <tr>
+        <td><strong>Status:</strong></td>
+        <td><%= @penduduk.status %></td>
+      </tr>
+  
+  </tbody>
+</table>
+
+<br>
+<br>
+<div class="col-md-offset-5">
+  <%= link_to 'Edit', edit_penduduk_path(@penduduk), class:'btn btn-warning' %>
+  <%= link_to 'Back', penduduks_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

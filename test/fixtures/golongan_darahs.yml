@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  golongan_darah: MyString
+
+two:
+  golongan_darah: MyString

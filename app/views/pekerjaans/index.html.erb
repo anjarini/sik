@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<h1>Pekerjaan
+<br>
+<br>
+<%= link_to 'Tambah Pekerjaan', new_pekerjaan_path, class:'btn btn-primary pull-left' %>
+<br>
+</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Jenis pekerjaan</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pekerjaans.each do |pekerjaan| %>
+      <tr>
+        <td><%= pekerjaan.jenis_pekerjaan %></td>
+        <td><%= link_to 'Show', pekerjaan, class:'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_pekerjaan_path(pekerjaan), class:'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', pekerjaan, method: :delete, data: { confirm: 'Anda yakin ingin menghapus?' }, class:'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

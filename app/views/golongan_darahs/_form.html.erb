@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+      <%= form_for(@golongan_darah) do |f| %>
+        <% if @golongan_darah.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@golongan_darah.errors.count, "error") %> prohibited this golongan_darah from being saved:</h2>
+
+            <ul>
+            <% @golongan_darah.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      <tr>  
+        <td><div class="field"></td>
+          <td><%= f.label :golongan_darah %></td>
+          <td><%= f.text_field :golongan_darah %></td>
+        </div>
+      </tr>
+
+      <br> 
+        <tr>
+        <td><div></td>
+        <td></td>
+        <div class="actions">
+          <td><%= f.submit %></td>
+        </div>
+        </tr>
+          </div>
+          </div>
+          </tbody>
+          </table>
+      <% end %>

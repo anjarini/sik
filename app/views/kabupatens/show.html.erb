@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  	<tbody>
+      	<tr>
+		  <td><strong>Nama kabupaten:</strong></td>
+		  <td><%= @kabupaten.nama_kabupaten %></td>
+		</tr>
+		<tr>
+		  <td><strong>Admin id:</strong></td>
+		  <td><%= @kabupaten.admin.nama%></td>
+		</tr>
+
+	</tbody>
+</table>
+
+<br>
+<br>
+<div class="col-md-offset-5">
+		<%= link_to 'Edit', edit_kabupaten_path(@kabupaten), class:'btn btn-warning' %> |
+		<%= link_to 'Back', kabupatens_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  penduduk_id: 1
+  agama_id: 1
+  penghasilan_id: 1
+  jenis_kelamin_id: 1
+  pekrjaan_id: 1
+
+two:
+  keyword: MyString
+  penduduk_id: 1
+  agama_id: 1
+  penghasilan_id: 1
+  jenis_kelamin_id: 1
+  pekrjaan_id: 1

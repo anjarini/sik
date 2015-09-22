@@ -1,0 +1,206 @@
+ <p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<script>
+$(document).ready(function() {
+  $('#genres_select').change(function() {
+    $.ajax({
+      url: "<%= update_artists_path %>",
+      data: {
+        kabupaten_id : $('#genres_select').val()
+        },
+      dataType: "script"
+    });
+  });
+  $('#artists_select').change(function() {
+    $.ajax({
+      url: "<%= update_songs_path %>",
+      data: {
+        kecamatan_id : $('#artists_select').val()
+      },
+      dataType: "script"
+    });
+  });
+});
+</script>
+<br>  
+  <tbody>
+      <tr>
+        <%= form_for(@penduduk) do |f| %>
+          <% if @penduduk.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@penduduk.errors.count, "error") %> prohibited this penduduk from being saved:</h2>
+              <ul>
+                <% @penduduk.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+
+                <% end %>
+              </ul>
+          </div>
+        <% end %>
+
+      <tr>
+            <td><div class="field"></td>
+                <td><%= f.label :Kabupaten %></td>
+                <td><%= collection_select(:penduduk,:kabupaten_id, @kabupatens, :id, :nama_kabupaten, {:prompt => "Select a Kabupaten"}, {:id => 'genres_select'})
+        %><%# p.select :kabupaten_id, options_for_select(@genres) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= f.label :kecamatan %></td>
+                <td><%= collection_select(:penduduk, :kecamatan_id, @kecamatans, :id, :nama_kecamatan, {:prompt => "Select a Kecamatan"}, {:id => 'artists_select'})
+        %><%# p.select :kecamatan_id, options_for_select(@artists) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= f.label :Kelurahan %></td>
+                <td><%= collection_select(:penduduk, :kelurahan_id, @kelurahans, :id, :nama_kelurahan, {:prompt => "Select a Kelurahan"}, {:id => 'songs_select'})
+        %><%# p.select :kelurahan_id, 
+                options_for_select(@songs) %></td>
+            </div>
+        </tr>
+        
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :nik %></td>
+            <td><%= f.text_field :nik %></td>
+          </div>
+      </tr>
+
+      <tr>
+        <td><div class="field"></td>
+          <td><%= f.label :no_kk%></td>
+          <td><%= f.text_field :no_kk %></td>
+        </div>
+      </tr>
+      
+      <tr>
+        <td><div class="field"></td>
+          <td><%= f.label :nama%></td>
+          <td><%= f.text_field :nama %></td>
+        </div>
+      </tr>
+      
+      <tr>
+        <%= fields_for GolonganDarah.new do |s|  %>
+          <td><div class="field"></td>
+              <td><%= s.label "golongan_darah" %></td>
+              <td><%= collection_select(:penduduk, :golongan_darah_id,  @golongan_darahs, :id, :golongan_darah, {include_blank: 'pilih golongan darah'}) %></td>
+          </div>
+        <% end %>
+      </tr>
+      
+      <tr>
+        <%= fields_for StatusKeluarga.new do |sk|  %>
+          <td><div class="field"></td>
+              <td><%= sk.label "Status Keluarga" %></td>
+              <td><%= collection_select(:penduduk, :status_keluarga_id,  @status_keluargas, :id, :status_keluarga, {include_blank: 'pilih status keluarga'} ) %></td>
+          </div>
+        <% end %>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :tempat_lahir %></td>
+            <td><%= f.text_field :tempat_lahir %></td>
+          </div>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :tanggal_lahir %></td>
+            <td><%= f.date_select :tanggal_lahir, :start_year => Date.today.year - 100 %></td>
+          </div>
+      </tr>
+      
+      <tr>
+          <td><div class="control-grup"></td>
+            <td><%= f.label :jenis_kelamin %></td>
+            <td><%= f.text_field :jenis_kelamin %></td>
+          </div>
+      </tr>
+      
+      <tr>
+        <%= fields_for Pekerjaan.new do |p|  %>
+          <td><div class="field"></td>
+              <td><%= p.label "Pekerjaan" %></td>
+              <td><%= collection_select(:penduduk, :pekerjaan_id,  @pekerjaans, :id, :jenis_pekerjaan, {include_blank: 'pilih pekerjaan'}) %></td>
+          </div>
+        <% end %>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :kewarganegaraan %></td>
+            <td><%= f.text_field :kewarganegaraan %></td>
+          </div>
+      </tr>
+      
+      <tr>
+        <%= fields_for Agama.new do |a|  %>
+          <td><div class="field"></td>
+              <td><%= a.label "Agama" %></td>
+              <td><%= collection_select(:penduduk, :agama_id,  @agamas, :id, :nama_agama, {include_blank: 'Pilih Agama'}) %></td>
+          </div>
+        <% end %>
+      </tr>
+      
+      <tr>
+        <%= fields_for Pendidikan.new do |a|  %>
+          <td><div class="field"></td>
+              <td><%= a.label "Pendidikan" %></td>
+              <td><%= collection_select(:penduduk, :pendidikan_id,  @pendidikans, :id, :jenjang, {include_blank: 'Pilih Pendidikan'}) %></td>
+          </div>
+        <% end %>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :rt %></td>
+            <td><%= f.text_field :rt %></td>
+          </div>
+      </tr>
+
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :rw %></td>
+            <td><%= f.text_field :rw %></td>
+          </div>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :alamat %></td>
+            <td><%= f.text_field :alamat %></td>
+          </div>
+      </tr>
+      
+      <tr>
+          <%= fields_for Penghasilan.new do |pe|  %>
+          <td><div class="field"></td>
+              <td><%= f.label "Penghasilan" %></td>
+              <td><%= collection_select(:penduduk, :penghasilan_id,  @penghasilans, :id, :penghasilan, {include_blank: 'Pilih penghasilan'}) %></td>
+              </div>
+              <% end %>
+      </tr>
+      
+      <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :status %></td>
+            <td><%= f.text_field :status %></td>
+          </div>
+      </tr>
+    
+    <br> 
+      <tr>
+          <td><div></td>
+          <td></td>
+            <td><%= f.submit class:'btn btn-warning' %></td>
+      </div>
+      </tr>
+  </div>
+  </div>
+  </tbody>
+</table>
+<% end %>

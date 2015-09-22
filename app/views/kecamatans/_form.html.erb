@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+    <tr>
+      <%= form_for(@kecamatan) do |f| %>
+        <% if @kecamatan.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@kecamatan.errors.count, "error") %> prohibited this kecamatan from being saved:</h2>
+
+            <ul>
+            <% @kecamatan.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :nama_kecamatan %></td>
+            <td><%= f.text_field :nama_kecamatan %></td>
+          </div>
+        </tr>
+        <tr>
+          <%=fields_for Kabupaten.new do |m|%>
+            <td><div class="field"></td>
+              <td><%= m.label "Kabupaten" %></td>
+              <td><%= collection_select(:kecamatan, :kabupaten_id,  @kabupatens, :id, :nama_kabupaten, {include_blank: 'pilih Kabupaten'}) %></td>
+            </div>
+          <% end %>
+      </tr>
+      <tr>
+          <%= fields_for Admin.new do |ad|  %>
+            <td><div class="field"></td>
+                <td><%= ad.label "Admin" %></td>
+                <td><%= collection_select(:kecamatan, :admin_id,  @admins, :id, :nama, {include_blank: 'pilih admin'}) %></td>
+            </div>
+          <% end %>
+      </tr>
+        <br> 
+          <tr>
+          <td><div></td>
+          <td></td>
+          <td><%= f.submit %></td>
+        </div>
+          </tr>
+          </tbody>
+          </table>
+<% end %>

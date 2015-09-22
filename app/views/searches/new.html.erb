@@ -1,0 +1,109 @@
+<script>
+$(document).ready(function() {
+  $('#genres_select').change(function() {
+    $.ajax({
+      url: "<%= update_artists_path %>",
+      data: {
+        kabupaten_id : $('#genres_select').val()
+        },
+      dataType: "script"
+    });
+  });
+  $('#artists_select').change(function() {
+    $.ajax({
+      url: "<%= update_songs_path %>",
+      data: {
+        kecamatan_id : $('#artists_select').val()
+      },
+      dataType: "script"
+    });
+  });
+});
+</script>
+
+<h1> Searching </h1>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<tr>
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody> 
+    <tr>
+        <%= form_for @search, html: {class: "pure-form"} do |p| %>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :keyword %></td>
+                <td><%= p.text_field :keyword %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :Kabupaten %></td>
+                <td><%= collection_select(:search,:kabupaten_id, @genres, :id, :nama_kabupaten, {:prompt => "Select a Kabupaten"}, {:id => 'genres_select'})
+        %><%# p.select :kabupaten_id, options_for_select(@genres) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :kecamatan %></td>
+                <td><%= collection_select(:search, :kecamatan_id, @artists, :id, :nama_kecamatan, {:prompt => "Select a Kecamatan"}, {:id => 'artists_select'})
+        %><%# p.select :kecamatan_id, options_for_select(@artists) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :Kelurahan %></td>
+                <td><%= collection_select(:search, :kelurahan_id, @songs, :id, :nama_kelurahan, {:prompt => "Select a Kelurahan"}, {:id => 'songs_select'})
+        %><%# p.select :kelurahan_id, 
+                options_for_select(@songs) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :agama %></td>
+                <td><%= p.select :agama_id, options_for_select(@agama) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label :Golongan_Darah %></td>
+                <td><%= p.select :golongan_darah_id, options_for_select(@golongan_darah) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field">
+                <td><%= p.label  :Penghasilan %></br>
+                <td><%= p.select :penghasilan_id, options_for_select(@penghasilan) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label  :Pekerjaan %></td>
+                <td><%= p.select :pekerjaan_id, options_for_select(@pekerjaan) %></td>
+            </div>
+        </tr>
+        <tr>
+            <td><div class="field"></td>
+                <td><%= p.label  :Pendidikan %></td>
+                <td><%= p.select :pendidikan_id, options_for_select(@pendidikan) %></td>
+            </div>
+        </tr>
+        <br>
+            <tr>
+                <td><div></td>
+                <td></td>
+                <td><div class="actions"><%= p.submit "Search", class:"pure-button pure-button-primary" %></div></td>
+                </div>
+            </tr>
+            <td></td>
+            <td></td>
+            <td><%= link_to 'Back', penduduks_path, class:'btn btn-warning' %> </td>
+            
+        <% end %>
+    </tr>
+
+
+</tr>
+</div>
+</div>

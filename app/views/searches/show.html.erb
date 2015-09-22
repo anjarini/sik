@@ -1,0 +1,57 @@
+<h1> Analisis </h1>
+<%#raise @match_penduduk.inspect  %>
+
+<div class="chart">
+	<%= image_tag(@chart) %>
+	 <%# Gchart.pie :size => '240x160', 
+                   :title => 'Vote split',
+                   :data => [20,10,15,5,50],
+                   :format => 'image_tag' %>
+
+      <%# Gchart.pie(:data => [20,10,15,5,50], :title => 'SDRuby Fu level', :size => '400x200', :labels => ['matt', 'rob', 'patrick', 'ryan', 'jordan'],:format => 'image_tag') %>
+</div>
+
+<div class="col-md-10 col-md-offset-1">		      
+
+	<div class="card">
+
+			<% if @match_penduduks.blank? %>
+
+				<p> tidak ditemukan </p>
+
+			<% else %>
+			<p>ditemukan <%= @match_penduduks.size %> penduduk </p>
+				<% @match_penduduks.each do |a| %>
+					<br>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Nama</th>
+						<th>Agama </td></th>
+						<th>penghasilan </th>
+						<th>Pendidikan</th>
+						<th>Golongan Darah</th>
+						<!-- <th>kelurahan</th> -->
+						<th>pekerjaan</th>
+					</tr>
+				</thead>
+
+				</tbody>
+					<tr>
+						<td><%= a.nama %></td>
+						<td><%= a.agama.nama_agama %></td>
+						<td><%= a.penghasilan.penghasilan%></td>
+						<td><%= a.pendidikan.jenjang %></td>
+						<td><%= a.golongan_darah.golongan_darah %></td>
+						<!-- <td><%# a.kelurahan.nama_kelurahan %></td> -->
+						<td><%= a.pekerjaan.jenis_pekerjaan %></td>
+				 	</tr>
+				 </tbody>
+			</table>
+			<% end %>
+			<% end %>
+
+	</div>
+
+</div>
+ 

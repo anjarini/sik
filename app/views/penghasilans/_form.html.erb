@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+        <%= form_for(@penghasilan) do |f| %>
+          <% if @penghasilan.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@penghasilan.errors.count, "error") %> prohibited this penghasilan from being saved:</h2>
+
+              <ul>
+              <% @penghasilan.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :penghasilan %></td>
+            <td><%= f.text_field :penghasilan %></td>
+          </div>
+          </tr>
+          <br> 
+          <tr>
+          <td><div></td>
+          <td></td>
+          <div class="actions">
+            <td><%= f.submit %></td>
+          </div>
+           </tr>
+          </div>
+          </div>
+          </tbody>
+          </table>
+        <% end %>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+<div class="card">
+<table class="table table-striped">
+<br>  
+  	<tbody>
+      	<tr>
+			<td><strong>Golongan darah:</strong></td>
+		  	<td><%= @golongan_darah.golongan_darah %></td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<br>
+<div class="col-md-offset-5">
+		<%= link_to 'Edit', edit_golongan_darah_path(@golongan_darah), class:'btn btn-warning' %> |
+		<%= link_to 'Back', golongan_darahs_path, class:'btn btn-primary' %>
+</div>
+<br>
+<br>
+</div>
+</div>

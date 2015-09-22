@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  no_kk: MyString
+  nama_depan: MyString
+  nama_belakang: MyString
+  golongan_darah: MyString
+  status_keluarga: MyString
+  status_nikah: MyString
+  tempat_lahir: MyString
+  tanggal_lahir: MyString
+  sex: MyString
+  pekerjaan: MyString
+
+two:
+  no_kk: MyString
+  no_ktp: MyString
+  nama_depan: MyString
+  nama_belakang: MyString
+  golongan_darah: MyString
+  status_keluarga: MyString
+  status_nikah: MyString
+  tempat_lahir: MyString
+  tanggal_lahir: MyString
+  sex: MyString
+  pekerjaan: MyString

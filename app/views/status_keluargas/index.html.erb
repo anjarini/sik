@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<h1>Status Keluarga
+<br>
+<br>
+<%= link_to 'Tambah Status keluarga', new_status_keluarga_path, class:'btn btn-primary pull-left'  %>
+<br>
+</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Status keluarga</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_keluargas.each do |status_keluarga| %>
+      <tr>
+        <td><%= status_keluarga.status_keluarga %></td>
+        <td><%= link_to 'Show', status_keluarga, class:'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_status_keluarga_path(status_keluarga), class:'btn btn-warning'  %></td>
+        <td><%= link_to 'Destroy', status_keluarga, method: :delete, data: { confirm: 'Anda yakin ingin menghapus?' }, class:'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+
+

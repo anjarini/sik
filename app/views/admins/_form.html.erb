@@ -1,0 +1,66 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-striped">
+<br>  
+  <tbody>
+      <tr>
+        <%= form_for(@admin) do |f| %>
+          <% if @admin.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+              <ul>
+              <% @admin.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :nama %></td>
+            <td><%= f.text_field :nama %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :instansi %></td>
+            <td><%= f.text_field :instansi %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :level %></td>
+            <td><%= f.text_field :level %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :username %></td>
+            <td><%= f.text_field :username %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <td><div class="field"></td>
+            <td><%= f.label :password %></td>
+            <td><%= f.text_field :password %></td>
+          </div>
+        </tr>
+
+        <br> 
+        <tr>
+        <td><div></td>
+        <td></td>
+          <div class="actions">
+            <td><%= f.submit %></td>
+          </div>
+          </tr>
+          </div>
+          </div>
+          </tbody>
+          </table>
+        <% end %>
