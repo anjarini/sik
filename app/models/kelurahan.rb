@@ -4,7 +4,7 @@ class Kelurahan < ActiveRecord::Base
   belongs_to :admin
   belongs_to :kecamatan
   has_many :penduduks, :counter_cache => true
-  geocoded_by :alamat_kel
+  geocoded_by :nama_kelurahan
   after_validation :geocode
 
 end

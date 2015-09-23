@@ -23,6 +23,20 @@
           </tr>
 
           <tr>
+            <td><div class="field"></td>
+            <td><%= f.label :latitude %></td>
+            <td><%= f.text_field :latitude %></td>
+            </div>
+          </tr>
+
+          <tr>
+            <td><div class="field"></td>
+            <td><%= f.label :longitude %></td>
+            <td><%= f.text_field :longitude %></td>
+            </div>
+          </tr>
+
+          <tr>
             <%= fields_for Kecamatan.new do |s|  %>
             <td><div class="field"></td>
             <td><%= s.label "Kecamatan" %></td>

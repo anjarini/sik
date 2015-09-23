@@ -4,6 +4,7 @@
 <table class="table table-striped">
 <br>  
   	<tbody>
+  		<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@kabupaten.latitude}%2#{@kabupaten.longitude}" %>
       	<tr>
 		  <td><strong>Nama kabupaten:</strong></td>
 		  <td><%= @kabupaten.nama_kabupaten %></td>
@@ -11,6 +12,14 @@
 		<tr>
 		  <td><strong>Admin id:</strong></td>
 		  <td><%= @kabupaten.admin.nama%></td>
+		</tr>
+		<tr>
+		  <td><strong>Latitude:</strong></td>
+		  <td><%= @kabupaten.latitude%></td>
+		</tr>
+		<tr>
+		  <td><strong>Longitude:</strong></td>
+		  <td><%= @kabupaten.longitude%></td>
 		</tr>
 
 	</tbody>

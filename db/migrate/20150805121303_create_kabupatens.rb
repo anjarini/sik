@@ -4,7 +4,8 @@ class CreateKabupatens < ActiveRecord::Migration
       t.integer :admin_id
       t.string :nama_kabupaten
       t.string :kode_pos
-      
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps null: false
     end

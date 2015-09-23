@@ -11,6 +11,7 @@ layout 'opencity'
   # GET /kabupatens/1
   # GET /kabupatens/1.json
   def show
+  
     @admins = Admin.all
   end
 
@@ -74,6 +75,6 @@ layout 'opencity'
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kabupaten_params
-      params.require(:kabupaten).permit(:nama_kabupaten, :alamat_kab, :admin_id )
+      params.require(:kabupaten).permit(:latitude, :longitude, :nama_kabupaten, :alamat_kab, :admin_id)
     end
 end

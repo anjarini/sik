@@ -88,6 +88,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kelurahan_params
-      params.require(:kelurahan).permit( :nama_kelurahan, :alamat_kel, :admin_id, :kecamatan_id)
+      params.require(:kelurahan).permit( :longitude, :latitude, :nama_kelurahan, :alamat_kel, :admin_id, :kecamatan_id)
     end
     

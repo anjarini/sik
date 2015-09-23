@@ -12,6 +12,8 @@
     <tr>
       <th>Nama kabupaten</th>
       <th>Admin</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +22,8 @@
     <% @kabupatens.each do |kabupaten| %>
       <tr>
         <td><%= kabupaten.nama_kabupaten %></td>
+        <td><%= kabupaten.latitude %></td>
+        <td><%= kabupaten.longitude %></td>
         <td><%= kabupaten.admin.nama %></td>
         <td><%= link_to 'Show', kabupaten, class:'btn btn-primary' %></td>
         <td><%= link_to 'Edit', edit_kabupaten_path(kabupaten), class:'btn btn-warning' %></td>

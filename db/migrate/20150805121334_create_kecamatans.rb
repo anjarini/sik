@@ -5,6 +5,8 @@ class CreateKecamatans < ActiveRecord::Migration
       t.integer :kabupaten_id
       t.string :nama_kecamatan
       t.string :kode_pos
+      t.float :latitude
+      t.float :longitude
      
       t.timestamps null: false
     end

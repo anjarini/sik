@@ -6,6 +6,8 @@ class CreateKelurahans < ActiveRecord::Migration
       t.string :nama_kelurahan
       t.string :alamat_kel
       t.string :kode_pos
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps null: false
     end
